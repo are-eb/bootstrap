@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop iT</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://via.placeholder.com/150x150?text" alt="Logo">
+      </a>
+      <div class="d-flex flex-grow-1">
+        <input class="form-control me-2" type="search" placeholder="Search for products, brands and more"
+          aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </div>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="#">Login</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Become a Seller</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">More</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Categories Section -->
+  <div class="container py-5">
+    <h2 class="text-center mb-5">Shop by Categories</h2>
+    <div class="row row-cols-2 row-cols-md-4 g-4">
+      <div class="col">
+        <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#mobilesBrands" role="button"
+          aria-expanded="false" aria-controls="mobilesBrands">
+          <div class="card-body">
+            <i class="bi bi-phone fs-1 text-primary"></i>
+            <h5 class="card-title">Mobiles</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#electronics" role="button"
+          aria-expanded="false" aria-controls="electronics">
+          <div class="card-body">
+            <i class="bi bi-tv fs-1 text-primary"></i>
+            <h5 class="card-title">Electronics</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#fashion" role="button"
+          aria-expanded="false" aria-controls="fashion">
+          <div class="card-body">
+            <i class="bi bi-person fs-1 text-primary"></i>
+            <h5 class="card-title">Fashion</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#homeAppliances" role="button"
+          aria-expanded="false" aria-controls="homeAppliances">
+          <div class="card-body">
+            <i class="bi bi-house-door fs-1 text-primary"></i>
+            <h5 class="card-title">Home Appliances</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse" id="mobilesBrands">
+      <div class="row row-cols-2 row-cols-md-4 g-4 mt-5">
+        <!-- Apple -->
+        <div class="col">
+          <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#appleProducts" role="button"
+            aria-expanded="false" aria-controls="appleProducts">
+            <div class="card-body">
+              <img src="https://via.placeholder.com/150x150?text=Apple" class="card-img-top mb-3" alt="Apple">
+              <h5 class="card-title">Apple</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Samsung -->
+        <div class="col">
+          <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#samsungProducts" role="button"
+            aria-expanded="false" aria-controls="samsungProducts">
+            <div class="card-body">
+              <img src="https://via.placeholder.com/150x150?text=Samsung" class="card-img-top mb-3" alt="Samsung">
+              <h5 class="card-title">Samsung</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google-->
+        <div class="col">
+          <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#googleProducts" role="button"
+            aria-expanded="false" aria-controls="googleProducts">
+            <div class="card-body">
+              <img src="https://via.placeholder.com/150x150?text=Google" class="card-img-top mb-3" alt="Google">
+              <h5 class="card-title">Google</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- OnePlus-->
+        <div class="col">
+          <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#oneplusProducts" role="button"
+            aria-expanded="false" aria-controls="oneplusProducts">
+            <div class="card-body">
+              <img src="https://via.placeholder.com/150x150?text=OnePlus" class="card-img-top mb-3" alt="OnePlus">
+              <h5 class="card-title">OnePlus</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products for Apple-->
+    <div class="collapse" id="appleProducts">
+      <div class="row row-cols-2 row-cols-md-3 g-4 mt-5">
+        <div class="col">
+          <div class="card">
+            <img src="https://via.placeholder.com/250x250?text=Apple+Phone+1" class="card-img-top" alt="Apple Phone 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">Apple iPhone 13</h5>
+              <p class="card-text">₹69,999</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://via.placeholder.com/250x250?text=Apple+Phone+2" class="card-img-top" alt="Apple Phone 2">
+            <div class="card-body text-center">
+              <h5 class="card-title">Apple iPhone 14</h5>
+              <p class="card-text">₹79,999</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products for Samsung-->
+    <div class="collapse" id="samsungProducts">
+      <div class="row row-cols-2 row-cols-md-3 g-4 mt-5">
+        <div class="col">
+          <div class="card">
+            <img src="https://via.placeholder.com/250x250?text=Samsung+Phone+1" class="card-img-top"
+              alt="Samsung Phone 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">Samsung Galaxy S21</h5>
+              <p class="card-text">₹59,999</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://via.placeholder.com/250x250?text=Samsung+Phone+2" class="card-img-top"
+              alt="Samsung Phone 2">
+            <div class="card-body text-center">
+              <h5 class="card-title">Samsung Galaxy Note20</h5>
+              <p class="card-text">₹74,999</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Electronics -->
+    <div class="collapse" id="electronics">
+      <div class="row row-cols-2 row-cols-md-4 g-4 mt-5">
+        <!-- Mobile Accessories -->
+        <div class="col">
+          <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#mobileAccessories" role="button"
+            aria-expanded="false" aria-controls="mobileAccessories">
+            <div class="card-body">
+              <img src="https://via.placeholder.com/150x150?text=Mobile+Accessories" class="card-img-top mb-3"
+                alt="Mobile Accessories">
+              <h5 class="card-title">Mobile Accessories</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- PC Accessories -->
+        <div class="col">
+          <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#pcAccessories" role="button"
+            aria-expanded="false" aria-controls="pcAccessories">
+            <div class="card-body">
+              <img src="https://via.placeholder.com/150x150?text=PC+Accessories" class="card-img-top mb-3"
+                alt="PC Accessories">
+              <h5 class="card-title">PC Accessories</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Power Bank -->
+        <div class="col">
+          <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#powerBank" role="button"
+            aria-expanded="false" aria-controls="powerBank">
+            <div class="card-body">
+              <img src="https://via.placeholder.com/150x150?text=Power+Bank" class="card-img-top mb-3" alt="Power Bank">
+              <h5 class="card-title">Power Bank</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Storage -->
+        <div class="col">
+          <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#dataStorage" role="button"
+            aria-expanded="false" aria-controls="dataStorage">
+            <div class="card-body">
+              <img src="https://via.placeholder.com/150x150?text=Data+Storage" class="card-img-top mb-3"
+                alt="Data Storage">
+              <h5 class="card-title">Data Storage</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Earbuds & Headphones -->
+        <div class="col">
+          <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#earbudsHeadphones" role="button"
+            aria-expanded="false" aria-controls="earbudsHeadphones">
+            <div class="card-body">
+              <img src="https://via.placeholder.com/150x150?text=Earbuds+Headphones" class="card-img-top mb-3"
+                alt="Earbuds & Headphones">
+              <h5 class="card-title">Earbuds & Headphones</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Accessories Products-->
+    <div class="collapse" id="mobileAccessories">
+      <div class="row row-cols-2 row-cols-md-3 g-4 mt-5">
+        <div class="col">
+          <div class="card">
+            <img src="https://via.placeholder.com/250x250?text=Mobile+Accessory+1" class="card-img-top"
+              alt="Mobile Accessory 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">Mobile Case</h5>
+              <p class="card-text">₹1,999</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://via.placeholder.com/250x250?text=Mobile+Accessory+2" class="card-img-top"
+              alt="Mobile Accessory 2">
+            <div class="card-body text-center">
+              <h5 class="card-title">Screen Protector</h5>
+              <p class="card-text">₹299</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PC Accessories Products -->
+    <div class="collapse" id="pcAccessories">
+      <div class="row row-cols-2 row-cols-md-3 g-4 mt-5">
+        <div class="col">
+          <div class="card">
+            <img src="https://via.placeholder.com/250x250?text=PC+Accessory+1" class="card-img-top"
+              alt="PC Accessory 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">Wireless Mouse</h5>
+              <p class="card-text">₹999</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://via.placeholder.com/250x250?text=PC+Accessory+2" class="card-img-top"
+              alt="PC Accessory 2">
+            <div class="card-body text-center">
+              <h5 class="card-title">Mechanical Keyboard</h5>
+              <p class="card-text">₹2,499</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add similar sections for Power Bank, Data Storage, Earbuds & Headphones -->
+
+  </div>
+  </div>
+  </div>
+
+  <div class="collapse" id="fashion">
+    <div class="mt-5">
+      <!-- Fashion Subcategories Accordion (Initially Hidden) -->
+      <div class="collapse" id="fashion">
+        <div class="row row-cols-2 row-cols-md-4 g-4 mt-5">
+          <!-- Men's Wear with Smaller Icon (Using Bootstrap Icons) -->
+          <div class="col">
+            <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#mensWear" role="button"
+              aria-expanded="false" aria-controls="mensWear">
+              <div class="card-body">
+                <!-- Using a smaller Bootstrap icon for Men's Wear -->
+                <i class="bi bi-person-bounding-box fs-1 text-primary mb-3"></i>
+                <h5 class="card-title">Men's Wear</h5>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Kid's Wear -->
+          <div class="col">
+            <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#kidsWear" role="button"
+              aria-expanded="false" aria-controls="kidsWear">
+              <div class="card-body">
+                <img src="https://via.placeholder.com/150x150?text=Kids+Wear" class="card-img-top mb-3" alt="Kids Wear">
+                <h5 class="card-title">Kid's Wear</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Women's Wear -->
+          <div class="col">
+            <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#womensWear" role="button"
+              aria-expanded="false" aria-controls="womensWear">
+              <div class="card-body">
+                <img src="https://via.placeholder.com/150x150?text=Women's+Wear" class="card-img-top mb-3"
+                  alt="Women's Wear">
+                <h5 class="card-title">Women's Wear</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shoes -->
+          <div class="col">
+            <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#shoes" role="button"
+              aria-expanded="false" aria-controls="shoes">
+              <div class="card-body">
+                <img src="https://via.placeholder.com/150x150?text=Shoes" class="card-img-top mb-3" alt="Shoes">
+                <h5 class="card-title">Shoes</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Watches -->
+          <div class="col">
+            <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#watches" role="button"
+              aria-expanded="false" aria-controls="watches">
+              <div class="card-body">
+                <img src="https://via.placeholder.com/150x150?text=Watches" class="card-img-top mb-3" alt="Watches">
+                <h5 class="card-title">Watches</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Men's Wear Products (Initially Hidden) -->
+      <div class="collapse" id="mensWear">
+        <div class="row row-cols-2 row-cols-md-3 g-4 mt-5">
+          <div class="col">
+            <div class="card">
+              <img src="https://via.placeholder.com/250x250?text=Men+Shirt" class="card-img-top" alt="Men Shirt">
+              <div class="card-body text-center">
+                <h5 class="card-title">Men's Casual Shirt</h5>
+                <p class="card-text">₹999</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://via.placeholder.com/250x250?text=Men+T-shirt" class="card-img-top" alt="Men T-shirt">
+              <div class="card-body text-center">
+                <h5 class="card-title">Men's T-shirt</h5>
+                <p class="card-text">₹799</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kid's Wear Products (Initially Hidden) -->
+      <div class="collapse" id="kidsWear">
+        <div class="row row-cols-2 row-cols-md-3 g-4 mt-5">
+          <div class="col">
+            <div class="card">
+              <img src="https://via.placeholder.com/250x250?text=Kids+T-shirt" class="card-img-top" alt="Kids T-shirt">
+              <div class="card-body text-center">
+                <h5 class="card-title">Kids T-shirt</h5>
+                <p class="card-text">₹499</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://via.placeholder.com/250x250?text=Kids+Shorts" class="card-img-top" alt="Kids Shorts">
+              <div class="card-body text-center">
+                <h5 class="card-title">Kids Shorts</h5>
+                <p class="card-text">₹399</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Women's Wear Products (Initially Hidden) -->
+      <div class="collapse" id="womensWear">
+        <div class="row row-cols-2 row-cols-md-3 g-4 mt-5">
+          <div class="col">
+            <div class="card">
+              <img src="https://via.placeholder.com/250x250?text=Women+Dress" class="card-img-top" alt="Women Dress">
+              <div class="card-body text-center">
+                <h5 class="card-title">Women’s Dress</h5>
+                <p class="card-text">₹1,499</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://via.placeholder.com/250x250?text=Women+Tops" class="card-img-top" alt="Women Tops">
+              <div class="card-body text-center">
+                <h5 class="card-title">Women’s Tops</h5>
+                <p class="card-text">₹799</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shoes Products (Initially Hidden) -->
+      <div class="collapse" id="shoes">
+        <div class="row row-cols-2 row-cols-md-3 g-4 mt-5">
+          <div class="col">
+            <div class="card">
+              <img src="https://via.placeholder.com/250x250?text=Men+Shoes" class="card-img-top" alt="Men Shoes">
+              <div class="card-body text-center">
+                <h5 class="card-title">Men's Running Shoes</h5>
+                <p class="card-text">₹1,299</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Watches Products (Initially Hidden) -->
+      <div class="collapse" id="watches">
+        <div class="row row-cols-2 row-cols-md-3 g-4 mt-5">
+          <!-- Smart Watches -->
+          <div class="col">
+            <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#smartWatches" role="button"
+              aria-expanded="false" aria-controls="smartWatches">
+              <div class="card-body">
+                <img src="https://via.placeholder.com/150x150?text=Smart+Watches" class="card-img-top mb-3"
+                  alt="Smart Watches">
+                <h5 class="card-title">Smart Watches</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analogue Watches -->
+          <div class="col">
+            <div class="card text-center shadow-sm" data-bs-toggle="collapse" href="#analogueWatches" role="button"
+              aria-expanded="false" aria-controls="analogueWatches">
+              <div class="card-body">
+                <img src="https://via.placeholder.com/150x150?text=Analogue+Watches" class="card-img-top mb-3"
+                  alt="Analogue Watches">
+                <h5 class="card-title">Analogue Watches</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse" id="homeAppliances">
+      <div class="mt-5">
+        <h3>Home Appliances Products</h3>
+        <!-- Add more products for Home Appliances category here -->
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

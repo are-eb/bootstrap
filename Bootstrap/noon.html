@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noon Shopping</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-offwhite">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient p-4 mb-5 rounded-4 shadow-lg ">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-warning d-flex align-items-center position-relative" href="#"
+        style="transition: transform 0.3s;">
+        <span class="me-2">Noon Shop</span>
+        <i class="bi bi-moon-stars" style="font-size: 28px;"></i>
+
+        <div class="tooltip bs-tooltip-bottom" role="tooltip">
+          <div class="arrow"></div>
+          <div class="tooltip-inner">Go to Home</div>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-dark p-3 rounded-pill mx-2 transition-all hover:bg-primary hover-shadow-lg position-relative"
+              href="#categories" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Browse Categories">
+              <i class="bi bi-boxes me-2"></i>Categories
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-dark p-3 rounded-pill mx-2 transition-all hover:bg-primary hover-shadow-lg position-relative"
+              href="#deals" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Best Deals">
+              <i class="bi bi-gift me-2"></i>Deals
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-dark p-3 rounded-pill mx-2 transition-all hover:bg-primary hover-shadow-lg position-relative"
+              href="#contact" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Contact Us">
+              <i class="bi bi-telephone me-2"></i>Contact
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <form class="d-flex ms-4 position-relative">
+              <input class="form-control me-2 border-0 rounded-pill bg-light" type="search" placeholder="Search"
+                aria-label="Search">
+              <button class="btn btn-outline-danger rounded-pill position-absolute top-0 end-0" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-dark p-3 rounded-pill mx-2 transition-all hover:bg-primary hover-shadow-lg position-relative"
+              href="#cart">
+              <i class="bi bi-cart me-2"></i>Cart
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark p-3 rounded-pill mx-2 transition-all hover:bg-primary hover-shadow-lg position-relative"
+              href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle me-2"></i>Profile
+            </a>
+            <ul class="dropdown-menu bg-dark border-0 shadow-lg rounded-4" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item text-light" href="#">My Account</a></li>
+              <li><a class="dropdown-item text-light" href="#">Orders</a></li>
+              <li><a class="dropdown-item text-light" href="#">Settings</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-light" href="#">Logout</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <button class="btn btn-outline-dark rounded-circle ms-2" id="darkModeToggle">
+              <i class="bi bi-moon-stars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('bg-dark');
+      document.body.classList.toggle('text-light');
+      darkModeToggle.querySelector('i').classList.toggle('bi-sun');
+      darkModeToggle.querySelector('i').classList.toggle('bi-moon-stars');
+    });
+  </script>
+
+  <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  </script>
+
+  <style>
+    .bg-gradient {
+      background: linear-gradient(45deg, #FF8C00, #FF6347);
+    }
+
+    .hover-bg-primary:hover {
+      background-color: #007bff !important;
+    }
+
+    .hover-shadow-lg:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand:hover {
+      transform: scale(1.1);
+    }
+  </style>
+
+
+  <!-- Hero -->
+  <div class="hero-banner position-relative" style="height: 100vh; overflow: hidden;">
+    <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0"
+      style="object-fit: cover;">
+      <source src="./assets/banner2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.4);"></div>
+
+    <div class="container text-center py-5 position-relative">
+      <h1 class="display-4 fw-bold text-white mb-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+        Your Trusted Mobile Accessories Store
+      </h1>
+      <p class="lead text-white mb-4" style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);">
+        Discover the latest mobiles, cases, and more!
+      </p>
+      <a href="#categories" class="btn btn-outline-danger btn-lg shadow-lg">Shop Now</a>
+    </div>
+  </div>
+
+
+  <div id="categoriesCarousel" class="carousel slide py-5" data-bs-ride="carousel">
+    <div class="container">
+      <h2 class="fw-bold mb-4 text-center text-white bg-primary p-3 rounded-3 shadow-lg"
+        style="background: linear-gradient(45deg, #ff7e5f, #feb47b); border: 2px solid #fff;">
+        Shop by Category
+      </h2>
+
+      <div class="carousel-inner">
+        <!--- First -->
+        <div class="carousel-item active">
+          <div class="row row-cols-2 row-cols-md-5 g-4">
+            <!--1 -->
+            <div class="col text-center">
+              <a href="#" class="text-decoration-none" data-bs-toggle="collapse" data-bs-target="#mobiles-section"
+                aria-expanded="false" aria-controls="mobiles-section">
+                <div
+                  class="rounded-circle d-flex align-items-center justify-content-center border border-secondary mx-auto"
+                  style="width: 80px; height: 80px; font-size: 30px; background-color: #101010; color: #939eab;">
+                  <i class="bi bi-phone"></i>
+                </div>
+                <h6 class="mt-2">Mobiles</h6>
+              </a>
+            </div>
+
+            <!--2 -->
+            <div class="col text-center">
+              <a href="#accessories" class="text-decoration-none" data-bs-toggle="collapse"
+                data-bs-target="#accessories-section">
+                <div class="rounded-circle overflow-hidden border border-secondary mx-auto"
+                  style="width: 80px; height: 80px;">
+                  <img src="https://t4.ftcdn.net/jpg/03/65/42/09/360_F_365420907_9pSBwQtYaAcobiudWhq588lk4p8kmMhm.jpg"
+                    class="w-100 h-100" alt="Accessories">
+                </div>
+                <h6 class="mt-2">Accessories</h6>
+              </a>
+            </div>
+            <!--3 -->
+            <div class="col text-center">
+              <a href="#cases" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden border border-secondary mx-auto"
+                  style="width: 80px; height: 80px;">
+                  <img src="./assets/cases-and-covers.jpg" class="w-100 h-100" alt="Cases">
+                </div>
+                <h6 class="mt-2">Cases & Covers</h6>
+              </a>
+            </div>
+            <!--4 -->
+            <div class="col text-center">
+              <a href="#power-banks" class="text-decoration-none" data-bs-toggle="collapse" aria-expanded="false"
+                aria-controls="power-banks">
+                <div class="rounded-circle overflow-hidden border border-secondary mx-auto"
+                  style="width: 80px; height: 80px;">
+                  <img src="./assets/power-banks.jpg" class="w-100 h-100" alt="Power Banks">
+                </div>
+                <h6 class="mt-2">Power Banks</h6>
+              </a>
+            </div>
+            <!--5-->
+            <div class="col text-center">
+              <a href="#chargers" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden border border-secondary mx-auto"
+                  style="width: 80px; height: 80px;">
+                  <img src="./assets/chargers.jpg" class="w-100 h-100" alt="Chargers">
+                </div>
+                <h6 class="mt-2">Chargers</h6>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second -->
+        <div class="carousel-item">
+          <div class="row row-cols-2 row-cols-md-5 g-4">
+            <!--6 -->
+            <div class="col text-center">
+              <a href="#headphones" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden border border-secondary mx-auto"
+                  style="width: 80px; height: 80px;">
+                  <img
+                    src="https://static.vecteezy.com/system/resources/thumbnails/009/463/365/small/wireless-earphone-icon-illustration-phone-accessory-flat-cartoon-style-suitable-for-web-landing-page-banner-flyer-sticker-wallpaper-background-free-vector.jpg"
+                    class="w-100 h-100" alt="Headphones">
+                </div>
+                <h6 class="mt-2">Headphones</h6>
+              </a>
+            </div>
+            <!-- 7 -->
+            <div class="col text-center">
+              <a href="#screen-protectors" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden border border-secondary mx-auto"
+                  style="width: 80px; height: 80px;">
+                  <img src="./assets/screen-protectors.jpg" class="w-100 h-100" alt="Screen Protectors">
+                </div>
+                <h6 class="mt-2">Screen Protectors</h6>
+              </a>
+            </div>
+            <!--8 -->
+            <div class="col text-center">
+              <a href="#bluetooth-devices" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden border border-secondary mx-auto"
+                  style="width: 80px; height: 80px;">
+                  <img src="./assets/bluetooth-devices.jpg" class="w-100 h-100" alt="Bluetooth Devices">
+                </div>
+                <h6 class="mt-2">Bluetooth Devices</h6>
+              </a>
+            </div>
+            <!--9 -->
+            <div class="col text-center">
+              <a href="#tablets" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden border border-secondary mx-auto"
+                  style="width: 80px; height: 80px;">
+                  <img src="./assets/tablets.jpg" class="w-100 h-100" alt="Tablets">
+                </div>
+                <h6 class="mt-2">Tablets</h6>
+              </a>
+            </div>
+            <!--10 -->
+            <div class="col text-center">
+              <a href="#smartwatches" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden border border-secondary mx-auto"
+                  style="width: 80px; height: 80px;">
+                  <img src="./assets/smart-watches.jpg" class="w-100 h-100" alt="Smartwatches">
+                </div>
+                <h6 class="mt-2">Smartwatches</h6>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel-->
+      <button class="carousel-control-prev" type="button" data-bs-target="#categoriesCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#categoriesCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile-->
+  <div id="mobiles-section" class="collapse" data-bs-parent="#categoriesCarousel">
+    <div class="container">
+      <h4 class="my-4 text-center display-4" data-bs-toggle="collapse" data-bs-target="#mobiles-section">Mobiles</h4>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4 hover-zoom" data-bs-toggle="modal"
+            data-bs-target="#iphoneModal">
+            <img
+              src="https://www.apple.com/v/iphone-16-pro/d/images/overview/product-stories/design/color__eaawe4bmivki_xlarge.jpg"
+              class="card-img-top rounded-top" alt="iPhone 16 Pro">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">iPhone 16 Pro</h5>
+              <p class="card-text text-muted">₹1,29,990</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2" data-bs-toggle="modal"
+                data-bs-target="#iphoneModal">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4 hover-zoom" data-bs-toggle="modal"
+            data-bs-target="#samsungModal">
+            <img
+              src="https://images.hindustantimes.com/tech/htmobile4/samsung-galaxy-s24-ultra-5g/colors/titanium%20yellow/samsung-galaxy-s24-ultra-5g-titanium%20yellow-3.jpg?width=263&height=263"
+              class="card-img-top rounded-top" alt="Samsung Galaxy S24 Ultra">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">Samsung Galaxy S24 Ultra</h5>
+              <p class="card-text text-muted">₹1,24,999</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2" data-bs-toggle="modal"
+                data-bs-target="#samsungModal">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4 hover-zoom" data-bs-toggle="modal"
+            data-bs-target="#oneplusModal">
+            <img
+              src="https://www.giztop.com/media/catalog/product/cache/dc206057cdd42d7e34b9d36e347785ca/o/n/oneplus-13-white-01.jpg"
+              class="card-img-top rounded-top" alt="OnePlus 13 Pro">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">OnePlus 13 Pro</h5>
+              <p class="card-text text-muted">₹69,999</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2" data-bs-toggle="modal"
+                data-bs-target="#oneplusModal">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4 hover-zoom" data-bs-toggle="modal"
+            data-bs-target="#iqooModal">
+            <img src="https://i.gadgets360cdn.com/large/iqoo_13_iqoo_1_1730287219043.jpg"
+              class="card-img-top rounded-top" alt="iQOO 13">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">iQOO 13</h5>
+              <p class="card-text text-muted">₹34,990</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2" data-bs-toggle="modal"
+                data-bs-target="#iqooModal">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal fade" id="iphoneModal" tabindex="-1" aria-labelledby="iphoneModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="iphoneModalLabel">iPhone 16 Pro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>Specifications:</h6>
+          <ul>
+            <li>Display: 6.1-inch Super Retina XDR Display</li>
+            <li>Processor: A16 Bionic Chip</li>
+            <li>Camera: 12MP Ultra Wide, 12MP Wide, 12MP Telephoto</li>
+            <li>Storage: 128GB, 256GB, 512GB</li>
+            <li>Battery: Up to 22 hours video playback</li>
+          </ul>
+          <h6>Features:</h6>
+          <ul>
+            <li>Face ID</li>
+            <li>IP68 Water and Dust Resistance</li>
+            <li>MagSafe Technology</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="samsungModal" tabindex="-1" aria-labelledby="samsungModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="samsungModalLabel">Samsung Galaxy S24 Ultra</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>Specifications:</h6>
+          <ul>
+            <li>Display: 6.8-inch Dynamic AMOLED 2X</li>
+            <li>Processor: Snapdragon 8 Gen 2</li>
+            <li>Camera: 108MP Primary, 12MP Ultra Wide, 10MP Telephoto</li>
+            <li>Storage: 256GB, 512GB</li>
+            <li>Battery: 5000mAh with 45W fast charging</li>
+          </ul>
+          <h6>Features:</h6>
+          <ul>
+            <li>IP68 Water and Dust Resistance</li>
+            <li>5G Connectivity</li>
+            <li>Samsung DeX Support</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="oneplusModal" tabindex="-1" aria-labelledby="oneplusModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="oneplusModalLabel">OnePlus 13 Pro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>Specifications:</h6>
+          <ul>
+            <li>Display: 6.7-inch Fluid AMOLED</li>
+            <li>Processor: Qualcomm Snapdragon 8 Gen 2</li>
+            <li>Camera: 50MP Primary, 48MP Ultra Wide, 64MP Telephoto</li>
+            <li>Storage: 128GB, 256GB</li>
+            <li>Battery: 5000mAh with 100W fast charging</li>
+          </ul>
+          <h6>Features:</h6>
+          <ul>
+            <li>5G Connectivity</li>
+            <li>OxygenOS</li>
+            <li>50W Wireless Charging</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="iqooModal" tabindex="-1" aria-labelledby="iqooModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="iqooModalLabel">iQOO 13</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>Specifications:</h6>
+          <ul>
+            <li>Display: 6.78-inch AMOLED</li>
+            <li>Processor: Snapdragon 8 Gen 2</li>
+            <li>Camera: 50MP Primary, 13MP Ultra Wide, 2MP Macro</li>
+            <li>Storage: 128GB, 256GB</li>
+            <li>Battery: 4500mAh with 120W fast charging</li>
+          </ul>
+          <h6>Features:</h6>
+          <ul>
+            <li>5G Connectivity</li>
+            <li>Vivo Funtouch OS</li>
+            <li>120Hz Refresh Rate</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Accessories -->
+  <div id="accessories-section" class="collapse">
+    <div class="container">
+      <h4 class="my-4">Accessories</h4>
+      <div class="row row-cols-2 row-cols-md-4 g-4">
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4">
+            <img src="https://images.app.goo.gl/6kDbkdg49EzJZWzj9" class="card-img-top rounded-top" alt="Phone Case">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">Phone Case</h5>
+              <p class="card-text text-muted">₹499</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4">
+            <img src="https://images.app.goo.gl/Pso8EzEBzUPtK21g6" class="card-img-top rounded-top"
+              alt="Wireless Earphones">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">Wireless Earphones</h5>
+              <p class="card-text text-muted">₹1,299</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4">
+            <img src="https://images.app.goo.gl/FhMQgZySba2E7mD99" class="card-img-top rounded-top"
+              alt="Bluetooth Speaker">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">Bluetooth Speaker</h5>
+              <p class="card-text text-muted">₹1,999</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4">
+            <img src="https://images.app.goo.gl/poVpY6x5zqGxo7FLA" class="card-img-top rounded-top"
+              alt="Portable Charger">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">Portable Charger</h5>
+              <p class="card-text text-muted">₹1,799</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Power Banks -->
+  <div class="collapse" id="power-banks">
+    <div class="container mt-4">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4">
+            <img src="https://images.mi.com/in/power-banks/mi-power-bank-3i.jpg" class="card-img-top rounded-top"
+              alt="Mi Power Bank 3i">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">Mi Power Bank 3i</h5>
+              <p class="card-text text-muted">₹1,299</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4">
+            <img src="https://realme.com/in/images/powerbank2.jpg" class="card-img-top rounded-top"
+              alt="Realme Power Bank 2">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">Realme Power Bank 2</h5>
+              <p class="card-text text-muted">₹1,399</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4">
+            <img src="https://m.media-amazon.com/images/I/71RZp1LgMZL._AC_SL1500_.jpg" class="card-img-top rounded-top"
+              alt="Anker PowerCore 10000">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">Anker PowerCore 10000</h5>
+              <p class="card-text text-muted">₹1,699</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-lg border-light rounded-4">
+            <img src="https://images.ambraneindia.com/images/products/pp11.jpg" class="card-img-top rounded-top"
+              alt="Ambrane PP-11 Power Bank">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">Ambrane PP-11 Power Bank</h5>
+              <p class="card-text text-muted">₹1,099</p>
+              <a href="#" class="btn btn-outline-primary w-100 py-2">View Details</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <!--Price Range-->
+  <div class="container py-5" id="mobile-products">
+    <h2 class="fw-bold mb-5 text-center text-light p-4 rounded-3 shadow-lg"
+      style="background: linear-gradient(45deg, #2c3e50, #34495e); border: 3px solid #fff;">
+      Mobile Phones by Price Range
+    </h2>
+    <div class="row">
+
+      <div class="col-12 mb-5">
+        <h4 class="text-center text-success mb-4 fw-bolder border-bottom border-3 border-success pb-2 position-relative"
+          style="font-size: 1.5rem; letter-spacing: 1px; text-transform: uppercase;">
+          Below 10K
+          <span class="position-absolute top-50 start-0 translate-middle-x text-success"
+            style="font-size: 1.5rem; opacity: 0.6;">🛒</span>
+        </h4>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100 hover-zoom" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Affordable and budget-friendly mobiles!">
+              <img src="https://www.androidauthority.com/wp-content/uploads/2020/06/xiaomi-redmi-9a-lazada-listing.jpg"
+                class="card-img-top" alt="Redmi 9A" style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title">Redmi 9A</h5>
+                <p class="card-text">₹7,499</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-success btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-success btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100 hover-zoom" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Best value smartphone under budget!">
+              <img src="./assets/reakmenarzo30A.jpg" class="card-img-top" alt="Realme Narzo 30A"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title">Realme Narzo 30A</h5>
+                <p class="card-text">₹8,999</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-success btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-success btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100 hover-zoom" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="A sleek design with powerful features!">
+              <img src="./assets/realme10A.jpg" class="card-img-top" alt="Redmi 10A"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title">Redmi 10A</h5>
+                <p class="card-text">₹8,499</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-success btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-success btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100 hover-zoom" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Smooth performance at an affordable price!">
+              <img src="./assets/pococ3.jpg" class="card-img-top" alt="Poco C3"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title">Poco C3</h5>
+                <p class="card-text">₹7,999</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-success btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-success btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-12 mb-5">
+        <h4 class="text-center text-info mb-4 fw-bolder border-bottom border-3 border-info pb-2 position-relative"
+          style="font-size: 1.5rem; letter-spacing: 1px; text-transform: uppercase;">
+          10K - 20K
+          <span class="position-absolute top-50 start-0 translate-middle-x text-info"
+            style="font-size: 1.5rem; opacity: 0.6;">📱</span>
+        </h4>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100 hover-zoom" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Feature-packed smartphone with vibrant display">
+              <img src="./assets/Samsung-Galaxy-M14-4G.jpg" class="card-img-top" alt="Samsung Galaxy M14"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">Samsung Galaxy M14</h5>
+                <p class="card-text text-muted">₹13,499</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-info btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-info btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100 hover-zoom" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Premium feel with long-lasting battery life">
+              <img src="./assets/realme-narzo-60x.jpg" class="card-img-top" alt="Realme Narzo 60x"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">Realme Narzo 60x</h5>
+                <p class="card-text text-muted">₹14,499</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-info btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-info btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100 hover-zoom" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Amazing performance with sleek design">
+              <img src="./assets/redme-note-12.jpg" class="card-img-top" alt="Redmi Note 12"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">Redmi Note 12</h5>
+                <p class="card-text text-muted">₹16,999</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-info btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-info btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100 hover-zoom" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="A flagship experience at an affordable price">
+              <img src="./assets/poco-x5-pro.jpeg" class="card-img-top" alt="Poco X5 Pro"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">Poco X5 Pro</h5>
+                <p class="card-text text-muted">₹19,499</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-info btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-info btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-12 mb-5">
+        <h4 class="text-center text-warning mb-4 fw-bolder border-bottom border-3 border-warning pb-2 position-relative"
+          style="font-size: 1.5rem; letter-spacing: 1px; text-transform: uppercase;">
+          20K - 40K
+          <span class="position-absolute top-50 start-0 translate-middle-x text-warning"
+            style="font-size: 1.5rem; opacity: 0.6;">💎</span>
+        </h4>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Flagship killer with amazing features">
+              <img src="./assets/oneplus-nord-2.jpg" class="card-img-top" alt="OnePlus Nord 2"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">OnePlus Nord 2</h5>
+                <p class="card-text text-muted">₹29,999</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-warning btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-warning btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Powerful performance with sleek design">
+              <img src="./assets/galaxy-s20-fe.jpg" class="card-img-top" alt="Samsung Galaxy S20 FE"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">Samsung Galaxy S20 FE</h5>
+                <p class="card-text text-muted">₹34,999</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-warning btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-warning btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Affordable flagship with top-notch camera">
+              <img src="./assets/iqoo-9-se.jpg" class="card-img-top" alt="iQOO 9 SE"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">iQOO 9 SE</h5>
+                <p class="card-text text-muted">₹36,990</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-warning btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-warning btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Premium build with flagship features">
+              <img src="./assets/pixel-6a.jpg" class="card-img-top" alt="Google Pixel 6a"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">Google Pixel 6a</h5>
+                <p class="card-text text-muted">₹37,999</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-warning btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-warning btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-12 mb-5">
+        <h4 class="text-center text-danger mb-4 fw-bolder border-bottom border-3 border-danger pb-2 position-relative"
+          style="font-size: 1.5rem; letter-spacing: 1px; text-transform: uppercase;">
+          40K and Above
+          <span class="position-absolute top-50 start-0 translate-middle-x text-danger"
+            style="font-size: 1.5rem; opacity: 0.6;">🚀</span>
+        </h4>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Flagship models with cutting-edge technology">
+              <img src="./assets/iPhone-13-pro.jpg" class="card-img-top" alt="iPhone 13 Pro"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">iPhone 13 Pro</h5>
+                <p class="card-text text-muted">₹1,19,900</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-danger btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-danger btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Top-tier performance with exceptional camera">
+              <img src="./assets/Galaxy-S22-Ultra.jpg" class="card-img-top" alt="Samsung Galaxy S22 Ultra"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">Samsung Galaxy S22 Ultra</h5>
+                <p class="card-text text-muted">₹1,09,999</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-danger btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-danger btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Stylish design and powerful internals">
+              <img src="./assets/pixel-7-pro.jpg" class="card-img-top" alt="Google Pixel 7 Pro"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">Google Pixel 7 Pro</h5>
+                <p class="card-text text-muted">₹84,999</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-danger btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-danger btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-lg rounded-4 h-100" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Exceptional hardware with stunning display">
+              <img src="./assets/oneplus-11-5g.jpg" class="card-img-top" alt="OnePlus 11"
+                style="height: 200px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark fw-bold">OnePlus 11</h5>
+                <p class="card-text text-muted">₹61,999</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="btn btn-outline-danger btn-sm px-4 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-danger btn-sm px-4 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+      <!--Deals-->
+      <div class="container py-5" id="deals">
+        <h2 class="fw-bold mb-5 text-center text-dark position-relative">
+          <span
+            class="badge text-light px-5 py-3 rounded-pill shadow-lg d-inline-flex align-items-center gap-3 animate__animated animate__pulse animate__infinite"
+            style="background: linear-gradient(135deg, #ff7e5f, #feb47b); font-size: 2rem; letter-spacing: 2px; padding-left: 40px; padding-right: 40px;">
+            <span>🔥</span>
+            <span>Hot Deals</span>
+            <div class="spinner-grow spinner-grow-sm text-light opacity-75" role="status" aria-hidden="true"></div>
+          </span>
+          <small class="d-block text-muted mt-3" style="font-size: 1.1rem; letter-spacing: 1px;">
+            Unmissable offers, just for you! 🚀 <i class="fas fa-fire"></i>
+
+          </small>
+        </h2>
+
+
+
+
+        <!-- Carousel -->
+        <div id="featured-products" class="carousel slide mb-4" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#featured-products" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#featured-products" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#featured-products" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+
+          <div class="carousel-inner" style="max-width: 90%; margin: 0 auto;">
+            <div class="carousel-item active">
+              <img src="./assets/image.png" class="d-block w-100" alt="Featured Product 1"
+                style="height: 300px; object-fit: cover;">
+            </div>
+
+            <div class="carousel-item">
+              <img src="./assets/image (1).png" class="d-block w-100" alt="Featured Product 2"
+                style="height: 300px; object-fit: cover;">
+            </div>
+
+            <div class="carousel-item active">
+              <img src="./assets/image (2).png" class="d-block w-100 rounded-3 shadow-lg" alt="Featured Product 3"
+                style="height: 300px; object-fit: cover; border-radius: 10px;">
+            </div>
+
+
+          </div>
+
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#featured-products" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#featured-products" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+          <!-- iPhone 13 Pro -->
+          <div class="col">
+            <div class="card border-0 shadow-lg rounded-3 position-relative overflow-hidden hover-shadow">
+              <div class="position-absolute top-0 start-0 p-2">
+                <span class="badge bg-danger">Hot Deal</span>
+              </div>
+              <img
+                src="https://iplanet.one/cdn/shop/files/iPhone_13_Pro_Max_Alpine_Green_PDP_Image_Position-9__en-US_0e13f7a5-86a5-4110-af30-52cd81fdca16.jpg?v=1691139873&width=823"
+                class="card-img-top" alt="Product" style="object-fit: cover; height: 200px;">
+              <div class="card-body text-center p-3">
+                <h5 class="card-title text-dark fw-bold">iPhone 13 Pro</h5>
+                <p class="card-text text-muted fs-6"><strike>₹94,999</strike> ₹74,999</p>
+                <!-- Added strike through for original price -->
+                <div class="mb-3">
+                  <span class="badge bg-warning">4.5 ★</span>
+                </div>
+                <div class="d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-outline-primary btn-sm px-3 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-primary btn-sm px-3 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Samsung Galaxy S21 -->
+          <div class="col">
+            <div class="card border-0 shadow-lg rounded-3 position-relative overflow-hidden hover-shadow">
+              <div class="position-absolute top-0 start-0 p-2">
+                <span class="badge bg-success">Discount</span>
+              </div>
+              <img src="https://static.digit.in/default/c515705b5aaf1bfa91904c3673c651520206128d.jpeg"
+                class="card-img-top" alt="Product" style="object-fit: cover; height: 200px;">
+              <div class="card-body text-center p-3">
+                <h5 class="card-title text-dark fw-bold">Samsung Galaxy S21</h5>
+                <p class="card-text text-muted fs-6"><strike>₹69,999</strike> ₹59,999</p>
+                <div class="mb-3">
+                  <span class="badge bg-warning">4.2 ★</span>
+                </div>
+                <div class="d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-outline-primary btn-sm px-3 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-primary btn-sm px-3 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Pixel 6 -->
+          <div class="col">
+            <div class="card border-0 shadow-lg rounded-3 position-relative overflow-hidden hover-shadow">
+              <div class="position-absolute top-0 start-0 p-2">
+                <span class="badge bg-info">Limited Offer</span>
+              </div>
+              <img
+                src="https://5.imimg.com/data5/SELLER/Default/2022/3/FW/NC/MH/38269391/google-pixel-6-5g-stromy-black-8gb-ram-128gb-storage--500x500.jpg"
+                class="card-img-top" alt="Product" style="object-fit: cover; height: 200px;">
+              <div class="card-body text-center p-3">
+                <h5 class="card-title text-dark fw-bold">Google Pixel 6</h5>
+                <p class="card-text text-muted fs-6"><strike>₹49,999</strike> ₹42,999</p>
+                <div class="mb-3">
+                  <span class="badge bg-warning">4.3 ★</span>
+                </div>
+                <div class="d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-outline-primary btn-sm px-3 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-primary btn-sm px-3 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- OnePlus 9 Pro -->
+          <div class="col">
+            <div class="card border-0 shadow-lg rounded-3 position-relative overflow-hidden hover-shadow">
+              <div class="position-absolute top-0 start-0 p-2">
+                <span class="badge bg-danger">Hot Deal</span>
+              </div>
+              <img src="https://i.pinimg.com/736x/cc/9a/df/cc9adfab4e54bb0bfff347e59a7fe713.jpg" class="card-img-top"
+                style="object-fit: cover; height: 200px;" alt="Product">
+              <div class="card-body text-center p-3">
+                <h5 class="card-title text-dark fw-bold">OnePlus 9 Pro</h5>
+                <p class="card-text text-muted fs-6"><strike>₹74,999</strike> ₹64,999</p>
+                <div class="mb-3">
+                  <span class="badge bg-warning">4.8 ★</span>
+                </div>
+                <div class="d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-outline-primary btn-sm px-3 py-2 rounded-pill">View Details</a>
+                  <a href="#" class="btn btn-primary btn-sm px-3 py-2 rounded-pill">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        <!-- Contact-->
+        <div class="bg-dark text-light py-5" id="contact">
+          <div class="container text-center">
+            <h2>Contact Us</h2>
+            <p>Reach out to us for any queries or support.</p>
+            <a href="mailto:support@noonshop.com" class="btn btn-outline-light btn-lg">Email Support</a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-light py-5 text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <h5 class="text-uppercase fw-bold">Noon Shop</h5>
+                <p>Your go-to store for all things mobile and accessories. Stay connected with the best gadgets!</p>
+              </div>
+              <div class="col-md-4 mb-4">
+                <h5 class="text-uppercase fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#categories" class="text-light text-decoration-none">Categories</a></li>
+                  <li><a href="#deals" class="text-light text-decoration-none">Deals</a></li>
+                  <li><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4 mb-4">
+                <h5 class="text-uppercase fw-bold">Follow Us</h5>
+                <ul class="list-unstyled d-flex justify-content-center gap-4">
+                  <li><a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a></li>
+                  <li><a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a></li>
+                  <li><a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a></li>
+                  <li><a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <hr class="bg-light">
+            <p>&copy; 2025 Noon Shop. All Rights Reserved.</p>
+          </div>
+          <span class="placeholder col-12"></span>
+
+          <span class="placeholder col-12 bg-primary"></span>
+          <span class="placeholder col-12 bg-secondary"></span>
+          <span class="placeholder col-12 bg-success"></span>
+          <span class="placeholder col-12 bg-danger"></span>
+          <span class="placeholder col-12 bg-warning"></span>
+          <span class="placeholder col-12 bg-info"></span>
+          <span class="placeholder col-12 bg-light"></span>
+          <span class="placeholder col-12 bg-dark"></span>
+        </footer>
+
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</body>
+
+</html>
